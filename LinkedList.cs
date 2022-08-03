@@ -48,6 +48,7 @@ namespace DataStructureUsingGenerics
             Console.WriteLine("{0} is added as a first element", data);
         }
 
+        //Method to display elements in LinkedList
         public void Display()
         {
             Console.WriteLine("Nodes Elements in Linked List : ");
@@ -68,6 +69,14 @@ namespace DataStructureUsingGenerics
             }
 
         }
+
+        //Method to append element
+        public void Append(int data)
+        {
+            AddLast(data); //functionality is same as AddLast so calling the method here
+        }
+
+
 
     }
 }
