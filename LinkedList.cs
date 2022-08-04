@@ -142,6 +142,30 @@ namespace DataStructureUsingGenerics
             }
         }
 
+        //search with value
+        public void SearchElement(int searchElement)
+        {   int node = 1;
+            int elementfound = 0;
+            if(head == null)
+                Console.WriteLine("Linked list is empty!!");
+            else
+            {
+                Node temp = head;
+                while(temp != null)
+                {
+                    if(temp.data == searchElement)
+                    {
+                        Console.WriteLine("Element {0} found at Node {1}", searchElement, node);
+                        elementfound = 1;
+                    }
+                    temp = temp.next;
+                    node++;
+                }
+                if(elementfound == 0)
+                Console.WriteLine("Element {0} is not present in the Linked List", searchElement);
+            }
+
+        }
 
     }
 }
