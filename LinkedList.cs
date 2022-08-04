@@ -40,7 +40,7 @@ namespace DataStructureUsingGenerics
             return temp; //returning last node
         }
 
-        //Method to add element at first place
+        //add element at first place
         public void AddFirst(int data)
         {
             Node newNode = new Node(data); //created new node to add
@@ -49,7 +49,7 @@ namespace DataStructureUsingGenerics
             Console.WriteLine("{0} is added as a first element", data);
         }
 
-        //Method to display elements in LinkedList
+        //display elements in LinkedList
         public void Display()
         {
             Console.WriteLine("Nodes Elements in Linked List : ");
@@ -71,13 +71,13 @@ namespace DataStructureUsingGenerics
 
         }
 
-        //Method to append element
+        //append element
         public void Append(int data)
         {
             AddLast(data); //functionality is same as AddLast so calling the method here
         }
 
-        //Method to insert in between
+        //insert in between or at position
         public void InsertElementInBetweenOrAtPosition(int position, int data)
         {
             
@@ -104,7 +104,20 @@ namespace DataStructureUsingGenerics
             }
             Console.WriteLine("{0} is inserted at {1} position", data, position);
         }
-        
+
+        //delete first
+        public void DeleteFirst()
+        {
+            if (head == null)
+                Console.WriteLine("LinkedList is Empty!!");
+            else
+            {
+                int elementRemoved = head.data;
+                head = head.next;
+                Console.WriteLine("First node element {0} is deleted from the Linked List", +elementRemoved);
+            }
+        }
+
 
     }
 }
