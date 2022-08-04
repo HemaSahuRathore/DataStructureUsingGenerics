@@ -2,8 +2,10 @@
 {  
     internal class Program
     {   /// <summary>
-        ///UC 7 : Ability to search LinkedList to find Node with value 30
-        ///- Loop through LinkedList to find node with key 30
+        ///UC8 : Ability to insert 40 after 30 to the Linked List sequence of 56->30->70
+        ///- Search LinkedList to find Node with key value 30
+        ///- Then Insert 40 to 30
+        ///- Final Sequence: 56->30->40->70
         /// </summary>
         static void Main(string[] args)
         {   
@@ -22,7 +24,8 @@
                 Console.WriteLine("5.Ability to delete first element");
                 Console.WriteLine("6.Ability to delete last element");
                 Console.WriteLine("7.Ability to search LinkedList to find Node with value 30");
-                Console.Write("8.Exit  ");
+                Console.WriteLine("8.Ability to insert 40 after 30 to the Linked List sequence of 56->30->70");
+                Console.Write("9.Exit  ");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -82,10 +85,19 @@
                         linkedListObj.Append(70);
                         linkedListObj.Display();
                         linkedListObj.SearchElement(30);
+                        Console.WriteLine();
                         break;
-
+                    case 8:
+                        linkedListObj.Append(56);
+                        linkedListObj.Append(30);
+                        linkedListObj.Append(70);
+                        linkedListObj.Display();
+                        linkedListObj.InsertDataAfterELement(40, 30);// Data:40, ELement:30
+                        linkedListObj.Display();
+                        Console.WriteLine();
+                        break;
                 }
-            }while (option !=8);
+            }while (option !=9);
             
 
          }

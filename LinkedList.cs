@@ -167,5 +167,36 @@ namespace DataStructureUsingGenerics
 
         }
 
+        //insert after element
+        public void InsertDataAfterELement(int data, int element)
+        {
+            int node = 1;
+            int elementfound = 0;
+
+            Node newElement = new Node(data);
+
+            if (head == null)
+                Console.WriteLine("Linked list is empty!!");
+            else
+            {
+                Node temp = head;
+                while (temp != null)
+                {
+                    if (temp.data == element)
+                    {
+                        Node tempAdd = temp.next; //storing temp address to add it to newElement.next
+                        temp.next = newElement;
+                        newElement.next = tempAdd; 
+                        elementfound = 1;
+                        Console.WriteLine("{0} is inserted after {1}", data, element);
+                        break;
+                    }
+                    temp = temp.next;
+                    node++;
+                }
+                if (elementfound == 0)
+                    Console.WriteLine("Element {0} is not present in the Linked List", element);
+            }
+        }
     }
 }
