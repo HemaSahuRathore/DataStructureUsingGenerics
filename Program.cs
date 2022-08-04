@@ -2,10 +2,11 @@
 {  
     internal class Program
     {   /// <summary>
-        ///UC8 : Ability to insert 40 after 30 to the Linked List sequence of 56->30->70
-        ///- Search LinkedList to find Node with key value 30
-        ///- Then Insert 40 to 30
-        ///- Final Sequence: 56->30->40->70
+        /// UC 9 : Ability to delete 40 from the Linked List sequence of 56->30->40->70 and show the size of LinkedList is 3
+        ///- Search LinkedList to find node with key value 40
+        ///- Delete the node
+        ///- Implement size() and show the Linked List size is 3
+        ///- Final Sequence: 56->30->70
         /// </summary>
         static void Main(string[] args)
         {   
@@ -25,7 +26,8 @@
                 Console.WriteLine("6.Ability to delete last element");
                 Console.WriteLine("7.Ability to search LinkedList to find Node with value 30");
                 Console.WriteLine("8.Ability to insert 40 after 30 to the Linked List sequence of 56->30->70");
-                Console.Write("9.Exit  ");
+                Console.WriteLine("9.Ability to delete 40 from the Linked List sequence of 56->30->40->70 and show the size of LinkedList is 3");
+                Console.Write("10.Exit  ");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -96,8 +98,20 @@
                         linkedListObj.Display();
                         Console.WriteLine();
                         break;
+                    case 9:
+                        linkedListObj.Append(56);
+                        linkedListObj.Append(30);
+                        linkedListObj.Append(40);
+                        linkedListObj.Append(70);
+                        linkedListObj.Display();
+                        linkedListObj.Size();
+                        linkedListObj.SearchElementNDelete(40);
+                        linkedListObj.Display();
+                        linkedListObj.Size();
+                        Console.WriteLine();
+                        break;
                 }
-            }while (option !=9);
+            }while (option != 10);
             
 
          }
