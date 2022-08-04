@@ -105,7 +105,7 @@ namespace DataStructureUsingGenerics
             Console.WriteLine("{0} is inserted at {1} position", data, position);
         }
 
-        //delete first
+        //delete first element
         public void DeleteFirst()
         {
             if (head == null)
@@ -114,7 +114,31 @@ namespace DataStructureUsingGenerics
             {
                 int elementRemoved = head.data;
                 head = head.next;
-                Console.WriteLine("First node element {0} is deleted from the Linked List", +elementRemoved);
+                Console.WriteLine("First node element {0} is deleted from the Linked List", + elementRemoved);
+            }
+        }
+
+        //delete last element      
+        public void DeleteLast()
+        {
+            Node temp = head;
+            if (temp == null)
+                Console.WriteLine("LinkedList is Empty!!");
+            if (temp.next == null)//True only if we have only one node or second node null
+            {
+                int data = temp.data;
+                temp = null;
+                Console.WriteLine("Node element {0} is deleted ", data);
+            }
+            else
+            {
+                while (temp.next.next != null)//if we have more than one node element or second node is not equal to null
+                {
+                    temp = temp.next;
+                }
+                int lastDeleteNode = temp.next.data;
+                temp.next = null;
+                Console.WriteLine("Last node element {0} is deleted ", lastDeleteNode);
             }
         }
 

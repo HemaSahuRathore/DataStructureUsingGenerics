@@ -2,8 +2,8 @@
 {  
     internal class Program
     {   /// <summary>
-        ///UC5 : Ability to delete the first element in the LinkedList of sequence 56->30->70
-        ///- Final Sequence: 30->70
+        ///UC6 : Ability to delete the last element in the LinkedList of sequence 56->30->70
+        ///- Final Sequence: 56->30
         /// </summary>
         static void Main(string[] args)
         {   
@@ -20,6 +20,7 @@
                 Console.WriteLine("3.Ability to create Linked List by appending 30 and 70 to 56, LinkedList Sequence: 56->30->70");
                 Console.WriteLine("4.Ability to insert 30 between 56 and 70 Final Sequence: 56->30->70");
                 Console.WriteLine("5.Ability to delete first element");
+                Console.WriteLine("6.Ability to delete last element");
                 Console.Write("6.Exit  ");
                 option = Convert.ToInt32(Console.ReadLine());
 
@@ -61,6 +62,15 @@
                         linkedListObj.Append(70);
                         linkedListObj.Display();
                         linkedListObj.DeleteFirst();
+                        linkedListObj.Display();
+                        Console.WriteLine();
+                        break;
+                    case 6:
+                        linkedListObj.Append(56);
+                        linkedListObj.Append(30);
+                        linkedListObj.Append(70);
+                        linkedListObj.Display();
+                        linkedListObj.DeleteLast();
                         linkedListObj.Display();
                         Console.WriteLine();
                         break;
