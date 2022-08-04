@@ -2,11 +2,8 @@
 {  
     internal class Program
     {   /// <summary>
-        /// UC3 : Ability to create Linked List by appending 30 and 70 to 56
-        ///- Node with data 56 is First Created
-        ///- Next Append 30 to 56
-        ///- Finally Append 70 to 30
-        ///- LinkedList Sequence: 56->30->70
+        ///UC4 : Ability to insert 30 between 56 and 70
+        ///- Final Sequence: 56->30->70
         /// </summary>
         static void Main(string[] args)
         {   
@@ -21,7 +18,8 @@
                 Console.WriteLine("1.Create a simple Linked List of 56, 30 and 70");
                 Console.WriteLine("2.Create Linked List by adding 30 and 56 to 70, LinkedList Sequence: 56->30->70");
                 Console.WriteLine("3.Ability to create Linked List by appending 30 and 70 to 56, LinkedList Sequence: 56->30->70");
-                Console.Write("4.Exit  ");
+                Console.WriteLine("4.Ability to insert 30 between 56 and 70 Final Sequence: 56->30->70");
+                Console.Write("5.Exit  ");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -47,8 +45,17 @@
                         linkedListObj.Display();
                         Console.WriteLine();
                         break;
+                    case 4:
+                        linkedListObj.AddLast(56);
+                        linkedListObj.AddLast(70);
+                        linkedListObj.Display();
+                        //linkedListObj.InsertElementInBetweenOrAtPosition(int position, int data)
+                        linkedListObj.InsertElementInBetweenOrAtPosition(2, 30); 
+                        linkedListObj.Display();
+                        Console.WriteLine();
+                        break;
                 }
-            }while (option !=4);
+            }while (option !=5);
             
 
          }

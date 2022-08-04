@@ -9,6 +9,7 @@ namespace DataStructureUsingGenerics
     public class LinkedList
     {
         public Node head;
+       
 
         //Method to add element to the last
         public void AddLast(int data)
@@ -76,7 +77,34 @@ namespace DataStructureUsingGenerics
             AddLast(data); //functionality is same as AddLast so calling the method here
         }
 
-
+        //Method to insert in between
+        public void InsertElementInBetweenOrAtPosition(int position, int data)
+        {
+            
+            if(position < 1)
+                Console.WriteLine("Invalid Position");
+            if(position == 1)
+            {
+                Node newNode = new Node(data);
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {       Node temp = head; 
+                    for(int i = 1; i <  position - 1; i++)
+                    {
+                        temp = temp.next;
+                    }
+                    if (temp!=null)
+                    {
+                        Node newNode = new Node(data);
+                        newNode.next = temp.next;
+                        temp.next = newNode;              
+                    }                
+            }
+            Console.WriteLine("{0} is inserted at {1} position", data, position);
+        }
+        
 
     }
 }
